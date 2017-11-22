@@ -2,33 +2,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_margin="4dp">
+    android:layout_margin="4dp"
+    android:orientation="vertical">
+
     <SearchView
         android:id="@+id/searchbar"
-        android:layout_marginBottom="4dp"
-        android:queryHint="@string/search"
-        android:background="#CFD8DC"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </SearchView>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:background="#CFD8DC"
+        android:queryHint="@string/search"></SearchView>
+
     <ProgressBar
         android:id="@+id/progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:paddingTop="60dp" />
+
     <ImageView
         android:id="@+id/nointernet"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/nointernet"
-        android:visibility="gone"/>
+        android:visibility="gone" />
+
     <ListView
-        android:background="#ECEFF1"
+        android:id="@+id/booklistview"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:id="@+id/booklistview">
-    </ListView>
+        android:background="#ECEFF1"></ListView>
 </LinearLayout>

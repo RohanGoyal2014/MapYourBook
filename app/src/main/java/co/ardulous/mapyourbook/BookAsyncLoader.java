@@ -15,9 +15,16 @@ import java.util.ArrayList;
 public class BookAsyncLoader extends AsyncTaskLoader<ArrayList<Book>> {
     private String MUrl;
     private ArrayList<Book> bookArrayList;
+
+    public BookAsyncLoader(Context context, String url) {
+        super(context);
+        MUrl = url;
+        //Log.e("AsyncLoader",MUrl);
+    }
+
     @Override
     public ArrayList<Book> loadInBackground() {
-        bookArrayList=Utilities.getData(MUrl);
+        bookArrayList = Utilities.getData(MUrl);
         /*for(int i=0;i<bookArrayList.size();++i)
         {
             Log.e("BookAsyncLoader",String.valueOf(i));
@@ -28,12 +35,5 @@ public class BookAsyncLoader extends AsyncTaskLoader<ArrayList<Book>> {
     @Override
     protected void onStartLoading() {
         forceLoad();
-    }
-
-    public BookAsyncLoader(Context context, String url)
-    {
-        super(context);
-        MUrl=url;
-        //Log.e("AsyncLoader",MUrl);
     }
 }

@@ -63,7 +63,7 @@ public class Utilities {
             }
             StringBuilder JSONStringContent = new StringBuilder();
             if (httpCode == 200) {
-                Log.v("Utilities","Successfully Connected");
+                Log.v("Utilities", "Successfully Connected");
                 //everything seems Okay
                 try {
                     InputStream inputStream = (InputStream) httpURLConnection.getInputStream();
@@ -87,11 +87,11 @@ public class Utilities {
             return null;
         }
     }
+
     public static ArrayList<Book> getData(String url) {
         ArrayList<Book> bookArrayList = new ArrayList<>();
         String JSONString = retreiveJSONString(url);
-        if(JSONString==null)
-        {
+        if (JSONString == null) {
             return null;
         }
         //Log.v("Utilities",JSONString);

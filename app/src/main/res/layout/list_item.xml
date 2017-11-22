@@ -17,22 +17,22 @@
         android:orientation="vertical">
 
         <TextView
-            android:textStyle="bold"
             android:id="@+id/booktitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="8dp"
             android:text="Book Title"
-            android:textAllCaps="true" />
+            android:textAllCaps="true"
+            android:textStyle="bold" />
 
         <TextView
-            android:textSize="12dp"
-            android:textStyle="italic"
             android:id="@+id/authors"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="8dp"
             android:paddingTop="8dp"
-            android:text="Book Author(s)" />
+            android:text="Book Author(s)"
+            android:textSize="12dp"
+            android:textStyle="italic" />
     </LinearLayout>
 </LinearLayout>

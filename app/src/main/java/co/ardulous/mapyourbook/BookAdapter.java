@@ -22,24 +22,22 @@ import java.util.ArrayList;
  * Created by ardulous on 21/11/17.
  */
 
-public class BookAdapter extends ArrayAdapter<Book>{
-    public BookAdapter(Context context,ArrayList<Book> arrayList)
-    {
-        super(context,0,arrayList);
+public class BookAdapter extends ArrayAdapter<Book> {
+    public BookAdapter(Context context, ArrayList<Book> arrayList) {
+        super(context, 0, arrayList);
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View listView=convertView;
-        if(listView==null)
-        {
-            listView= LayoutInflater.from(getContext()).inflate(R.layout.list_item,parent,false);
+        View listView = convertView;
+        if (listView == null) {
+            listView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
         }
-        final Book currBook=getItem(position);
-        TextView titleView=listView.findViewById(R.id.booktitle);
-        TextView authorView=listView.findViewById(R.id.authors);
-        ImageView imageView=listView.findViewById(R.id.imagethumbnail);
+        final Book currBook = getItem(position);
+        TextView titleView = listView.findViewById(R.id.booktitle);
+        TextView authorView = listView.findViewById(R.id.authors);
+        ImageView imageView = listView.findViewById(R.id.imagethumbnail);
         titleView.setText(currBook.getBtitle());
         authorView.setText(currBook.getbAuthorString());
         //Log.e("BookAdapter",currBook.getBthumbnailUrl());
@@ -49,7 +47,7 @@ public class BookAdapter extends ArrayAdapter<Book>{
         listView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent();
+                Intent intent = new Intent();
                 intent.setData(Uri.parse(currBook.getBpreviewLink()));
                 getContext().startActivity(intent);
             }
